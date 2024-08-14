@@ -1,4 +1,4 @@
-# "Школа 21"
+# "MAN Школа 21"
 **Мои курсы:**
 *1. Hexlet:*   
 +    [Основы командной строки](https://ru.hexlet.io/courses/cli-basics)  
