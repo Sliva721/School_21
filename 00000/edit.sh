@@ -49,6 +49,7 @@ sed -i -e "s/$old_str/$new_str/g" $file
 echo 'Смотри, что получилось:'
 cat $file
 echo 'Считаем checksum вносим изменения в LOG:'
+stat --format=%n-%s-%y $file  >> test.log
 sha256sum "$file" >> test.log
 cat test.log
 
