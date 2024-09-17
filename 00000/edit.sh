@@ -23,7 +23,6 @@ then
 echo 'Ты ничего не ввёл. Иди потренируйся...'
 exit 1
    fi
-cd $way
 if ! [ -f "$file" ]; then
 echo 'Нет такого файла. Иди потренируйся...'
 exit 1
@@ -35,12 +34,11 @@ cat $file
 echo
 echo 'Набери строку (текст), который надо поменять:'
 read old_str
-if [ -z "$old_str" ] 
-then
-echo 'Ты ничего не ввёл. Будь внимательнее, повтори сначала!'
-exit 1
-   fi
-# cd $way
+# if [ -z "$old_str" ] 
+# then
+# echo 'Ты ничего не ввёл. Будь внимательнее, повтори сначала!'
+# exit 1
+#    fi
 # if ! [ -f "$file" ]; then
 # echo 'Нет такого файла. Иди потренируйся...'
 # exit 1
@@ -50,4 +48,9 @@ read new_str
 sed -i -e "s/$old_str/$new_str/g" $file
 echo 'Смотри, что получилось:'
 cat $file
+echo 'Считаем checksum вносим изменения в LOG:'
+sha256sum "$file" >> test.log
+cat test.log
+
+
 
